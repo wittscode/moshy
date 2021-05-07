@@ -4,6 +4,7 @@
   --color-accent: #ff3400;
   --color-headings: #1b0760;
   --color-body: #918ca4;
+  --color-body-darker: #5c5777;
   --color-border: #ccc;
   --border-radius: 30px;
 }
@@ -175,13 +176,26 @@ a {
 }
 
 .icon-container {
-  background-color: #f3f9fa;
+  background: #f3f9fa;
   width: 64px;
   height: 64px;
   border-radius: 100%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-container--accent {
+  background: var(--color-accent);
+}
+
+.icon--white {
+  fill: white;
+}
+
+.icon--small {
+  width: 30px;
+  height: 30px;
 }
 
 /* BUTTON */
@@ -357,7 +371,6 @@ a {
   position: absolute;
   top: -6px;
   right: 5%;
-  font-family: ;
 }
 
 @media screen and (min-width: 1024px) {
@@ -394,4 +407,99 @@ a {
 
 .media__image {
   margin-top: 1rem;
+}
+
+/* QUOTES */
+
+.quote {
+  font-size: 3rem;
+  font-size: italic;
+  color: var(--color-body-darker);
+  font-style: italic;
+}
+
+.quote__text::before {
+  content: open-quote;
+}
+
+.quote__text::after {
+  content: close-quote;
+}
+
+.quote__author {
+  font-size: 3rem;
+  font-weight: 600;
+  font-style: normal;
+  margin: 0;
+}
+
+.quote__org {
+  color: var(--color-headings);
+  opacity: 0.4;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+.quote__line {
+  position: relative;
+  top: -0.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .quote {
+    font-size: 2.4rem;
+  }
+
+  .quote__org {
+    font-size: 1.6rem;
+  }
+}
+
+/* GRIDS */
+
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TESTIMONIALS */
+
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image {
+  position: relative;
+}
+
+.testimonial__image > img {
+  width: 100%;
+}
+
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 3rem;
+  right: -32px;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .quote__author {
+    font-size: 2.4rem;
+  }
+
+  .testimonial .quote {
+    margin-left: 6rem;
+  }
 }
